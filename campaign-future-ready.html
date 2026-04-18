@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future-Ready Campus Program | Dynamic Educational Services</title>
+  <meta name="description" content="Bring Robotics and AI Learning to your school or college. Register your institution's interest with Dynamic Educational Services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .campaign-header {
+      background: linear-gradient(135deg, #0d2137 0%, #112e4a 60%, #1a3d5e 100%);
+      color: #fff;
+      padding: 3.5rem 0 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(239,131,84,0.18), transparent 55%),
+                  radial-gradient(circle at 20% 80%, rgba(125,182,216,0.15), transparent 50%);
+      pointer-events: none;
+    }
+    .campaign-header .brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .campaign-header .brand-bar img {
+      height: 48px;
+      object-fit: contain;
+    }
+    .campaign-header h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.08;
+      margin: 0 auto 1rem;
+      max-width: 820px;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .campaign-header .sub {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #d4e8f5;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .problem-bar {
+      background: #fff8f0;
+      border-top: 4px solid var(--accent);
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+    .stat-card {
+      background: rgba(239,131,84,0.08);
+      border: 1px solid rgba(239,131,84,0.25);
+      border-radius: 14px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.88rem;
+      margin-top: 0.4rem;
+      color: var(--ink-soft);
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+    .program-card {
+      border-radius: 18px;
+      padding: 1.6rem;
+      border: 1px solid var(--line);
+    }
+    .program-card.robotics {
+      background: linear-gradient(135deg, #e8f4fd, #d0eafb);
+      border-color: #aed6f1;
+    }
+    .program-card.ai {
+      background: linear-gradient(135deg, #fef0e6, #fde3cc);
+      border-color: #f5c6a0;
+    }
+    .program-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .program-card ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); }
+    .program-card li { margin-bottom: 0.4rem; font-size: 0.94rem; }
+    .how-steps { display: grid; gap: 0.8rem; margin-top: 1.2rem; }
+    .how-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+    }
+    .step-num {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 2rem;
+      line-height: 1;
+    }
+    .campaign-form-wrap {
+      background: linear-gradient(180deg, #f0f8ff, #fff);
+      border-top: 1px solid var(--line);
+    }
+    .campaign-form-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .form-pitch h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); margin-bottom: 0.7rem; }
+    .form-pitch p { color: var(--ink-soft); margin-bottom: 1rem; }
+    .trust-points { list-style: none; padding: 0; margin: 0; }
+    .trust-points li { padding: 0.4rem 0; color: var(--ink-soft); font-size: 0.95rem; }
+    .trust-points li::before { content: "\2713\00a0"; color: #27ae60; font-weight: 700; }
+    .campaign-footer {
+      background: #0d2137;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .campaign-footer p { color: #a8c8e0; margin-top: 0.5rem; }
+    .wa-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #25d366;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .wa-inline:hover { background: #1faa53; }
+    .campaign-form-wrap select {
+      width: 100%;
+      padding: 0.68rem 0.72rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      background: #fff;
+    }
+    @media (max-width: 800px) {
+      .stat-row,
+      .program-grid,
+      .campaign-form-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- No site nav — this is a focused campaign page -->
+
+  <div class="campaign-header">
+    <div class="container">
+      <div class="brand-bar">
+        <img src="logo.png" alt="Dynamic Educational Services">
+      </div>
+      <p class="eyebrow" style="color:#ef8354; margin-bottom:1rem;">A Special Initiative for Forward-Thinking Institutions</p>
+      <h1>Bring Robotics and AI Learning to Your Campus in 2026</h1>
+      <p class="sub">A structured program for schools and colleges ready to give students real skills for a technology-first world.</p>
+      <div class="badge-row">
+        <span class="badge">Grades 6 to 12</span>
+        <span class="badge">College Departments</span>
+        <span class="badge">Hands-On Labs</span>
+        <span class="badge">Pilot-Friendly Entry</span>
+        <span class="badge">NEP 2020 Aligned</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section problem-bar">
+    <div class="container">
+      <h2>The Gap Every Institution Needs to Close</h2>
+      <p class="section-intro">Academic institutions across India are under growing pressure to bridge the gap between classroom learning and the skills that industry, higher education, and the real world actually demand.</p>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-number">76%</div>
+          <div class="stat-label">of students feel unprepared for technology-first careers after graduation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3 in 5</div>
+          <div class="stat-label">principals cite lack of vetted program partners as the key barrier to launching STEM initiatives</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1 semester</div>
+          <div class="stat-label">is typically enough to show measurable student engagement improvement with structured programs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2>Two Programs. One Purposeful Direction.</h2>
+      <p class="section-intro">Dynamic Educational Services brings you access to two proven program formats, scoped for practical campus deployment.</p>
+      <div class="program-grid">
+        <div class="program-card robotics">
+          <h3>Robotics Program</h3>
+          <p>Hands-on engineering and problem-solving through robot design, programming, and competition challenges.</p>
+          <ul>
+            <li>Suitable for Grades 6 to 12 and first-year college</li>
+            <li>Works within existing science or technology timetable</li>
+            <li>Hardware kits, instructor training, and support included</li>
+            <li>Directly supports STEM and NEP 2020 goals</li>
+          </ul>
+        </div>
+        <div class="program-card ai">
+          <h3>AI Learning Platform</h3>
+          <p>Structured AI literacy and applied machine learning concepts designed for the next generation of learners.</p>
+          <ul>
+            <li>No prior coding required to start</li>
+            <li>Covers AI concepts, tools, ethics, and real use cases</li>
+            <li>Progress tracking and assessments built in</li>
+            <li>Scalable from one class to full department rollout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt reveal">
+    <div class="container">
+      <h2>How It Works for Your Institution</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <div>
+            <strong>Register Your Interest</strong>
+            <p>Fill the short form below. We review your institution profile and confirm fit within 48 hours.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <div>
+            <strong>Discovery Discussion</strong>
+            <p>A 30-minute call with our team to understand your campus context, student profile, and goals.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <div>
+            <strong>Pilot Proposal</strong>
+            <p>We send a tailored pilot plan with scope, timeline, cost structure, and expected outcomes.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">4</div>
+          <div>
+            <strong>Launch and Grow</strong>
+            <p>Start with one grade or department. Expand based on results and campus appetite.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section campaign-form-wrap">
+    <div class="container campaign-form-inner">
+      <div class="form-pitch">
+        <p class="eyebrow">Register Now</p>
+        <h2>Express Your Institution's Interest</h2>
+        <p>Fill this short form and our team will get back to you within 48 hours with a tailored overview for your campus.</p>
+        <ul class="trust-points">
+          <li>No commitment required at this stage</li>
+          <li>Pilot-friendly entry points available</li>
+          <li>Programs aligned to NEP 2020, CBSE and ICSE frameworks</li>
+          <li>Dedicated DES support throughout implementation</li>
+        </ul>
+        <div style="margin-top:1.6rem;">
+          <p style="font-weight:600; margin-bottom:0.6rem; color:var(--ink);">Prefer WhatsApp?</p>
+          <a class="wa-inline" href="https://web.whatsapp.com/send?text=Hello%20Dynamic%20Educational%20Services%2C%20I%20am%20interested%20in%20the%20Future-Ready%20Campus%20Program%20(Robotics%20and%20AI)%20for%20my%20institution.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-bottom:1rem;">Institution Interest Form</h2>
+        <form name="future-ready-interest" method="POST" data-netlify="true" class="contact-form">
+          <input type="hidden" name="form-name" value="future-ready-interest">
+
+          <label for="inst-name">Institution Name</label>
+          <input id="inst-name" name="institution" type="text" placeholder="Your school or college name" required>
+
+          <label for="c-role">Your Role</label>
+          <input id="c-role" name="role" type="text" placeholder="Principal, Director, Department Head..." required>
+
+          <label for="c-name">Your Name</label>
+          <input id="c-name" name="name" type="text" required>
+
+          <label for="c-phone">WhatsApp / Phone Number</label>
+          <input id="c-phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" required>
+
+          <label for="c-interest">Which program interests you?</label>
+          <select id="c-interest" name="interest">
+            <option value="both">Both Robotics and AI Learning</option>
+            <option value="robotics">Robotics Program only</option>
+            <option value="ai">AI Learning Platform only</option>
+            <option value="unsure">Not sure yet, want to learn more</option>
+          </select>
+
+          <label for="c-message">Anything specific you want us to know?</label>
+          <textarea id="c-message" name="message" rows="3" placeholder="Grade levels, number of students, timing, any constraints..."></textarea>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.4rem; font-size:1rem; padding:0.85rem;">Submit My Interest</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="campaign-footer">
+    <div class="container">
+      <img src="logo.png" alt="Dynamic Educational Services" style="height:42px; object-fit:contain; margin-bottom:0.7rem; display:block; margin-left:auto; margin-right:auto;">
+      <p>The Bridge Between Technology Solutions, Skills and Education Decision Makers</p>
+      <p style="margin-top:0.4rem; font-size:0.85rem;">Copyright 2026 Dynamic Educational Services. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
