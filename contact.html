@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dynamic Educational Services</title>
+  <meta name="description" content="Connect with Dynamic Educational Services to design your institution-first growth roadmap.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Dynamic Educational Services logo" class="brand-logo">
+        <span class="brand-text">Dynamic Educational Services</span>
+      </a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">Menu</button>
+      <nav id="mainNav" class="nav-links">
+        <a href="approach.html">Our Model</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="proof.html">Impact</a>
+        <a href="contact.html" class="cta-link active">Talk to Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="inner-hero reveal">
+      <div class="container">
+        <p class="eyebrow">Let Us Build Your Entry Strategy</p>
+        <h1>Start a Focused Conversation</h1>
+        <p class="lead">Share your solution and goals. We will map the fastest institution-fit pathway.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container form-layout">
+        <div class="card">
+          <h2>Get In Touch</h2>
+          <form class="contact-form" name="des-contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="des-contact">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="solution">What does your solution do?</label>
+            <textarea id="solution" name="solution" rows="5" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h2>What Happens Next</h2>
+          <ol class="steps">
+            <li>We review your category and target institution profile.</li>
+            <li>We schedule a 30-minute discovery discussion.</li>
+            <li>We recommend a market positioning and pilot path.</li>
+          </ol>
+          <div class="button-row">
+            <a class="btn btn-whatsapp" href="https://web.whatsapp.com/send?text=Hello%20Dynamic%20Educational%20Services%2C%20I%20would%20like%20to%20discuss%20positioning%20our%20technology%20solutions%20and%20skills%20for%20schools%20and%20colleges." target="_blank" rel="noopener noreferrer">Chat on Web WhatsApp</a>
+          </div>
+          <p class="muted">Prefer email? Reach us at hello@dynamicedu.co.in</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Copyright 2026 Dynamic Educational Services.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="approach.html">Our Model</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="proof.html">Impact</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
